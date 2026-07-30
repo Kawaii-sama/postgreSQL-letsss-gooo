@@ -1,0 +1,1 @@
+import {Entity, PrimaryGeneratedColummn, Column} from "typeorm";
