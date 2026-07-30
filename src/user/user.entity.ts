@@ -5,4 +5,7 @@ export class User {
 
     @PrimaryGeneratedColummn()
     id: number;
+
+    @Column()
+    name : string
 }
