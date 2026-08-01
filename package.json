@@ -26,6 +26,7 @@
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/typeorm": "^11.0.3",
     "@prisma/client": "^7.9.1",
+    "controller": "^1.0.0",
     "employees": "^0.0.2",
     "module": "^2.0.0",
     "pg": "^8.22.0",
