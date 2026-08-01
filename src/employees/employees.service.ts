@@ -9,4 +9,8 @@ export class EmployeesService {
         @InjectRepository(Employee) // tells what entity to be injeced in this service
         private employeeRepository: Repository <Employee> //Repository tells on what entity crud rules are to applied
     ) {}
+
+    async create(employeeData: Partial<Employee>) : Promise<Employee>{
+
+    }
 }
