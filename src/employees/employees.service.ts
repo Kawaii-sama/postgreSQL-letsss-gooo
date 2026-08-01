@@ -11,7 +11,7 @@ export class EmployeesService {
     ) {}
 
     async create(employeeData: Partial<Employee>) : Promise<Employee>{
-        const employee = this.employeeRepository.create(employeeData);
+        const employee = this.employeeRepository.create(employeeData); //.create is the c of crud
         return this.employeeRepository.save(employee);
     }
 }
