@@ -28,7 +28,7 @@ export class EmployeesService {
     }
 
     async update(id : number, updatedData: Partial<Employee>) : Promise<Employee> {
-        const employee = await this.findOne({ id });
+        const employee = await this.findOne(id);
         if(!employee) {
             throw new NotFoundException(`Employee with ID ${id} not found`);
         }
