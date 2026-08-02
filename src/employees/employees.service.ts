@@ -19,5 +19,7 @@ export class EmployeesService {
         return this.employeeRepository.find(); //find is the r of crud
     }
 
-    asy
+    async findOne(id : number) : Promise<Employee> {
+        const employee = await this.employeeRepository.findOneBy({id});
+    }
 }
