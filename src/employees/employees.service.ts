@@ -22,7 +22,7 @@ export class EmployeesService {
     async findOne(id : number) : Promise<Employee> {
         const employee = await this.employeeRepository.findOneBy({id});
         if(!employee) {
-            throw new NotFoundException (`Employee with ${id} not found`);
+            throw new NotFoundException (`Employee with ID ${id} not found`);
         }
         return employee;
     }
