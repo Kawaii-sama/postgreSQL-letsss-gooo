@@ -37,4 +37,12 @@ export class EmployeesService {
         return this.employeeRepository.save(updated);
 
     }
+
+    async delete(id : number) : Promise< { message : string}> {
+        const result = await this.employeeRepository.delete(id);
+        if(result.affected === 0) {
+            throw new NotFoundException(`Employee with ID ${id} not found`);
+        }
+        return { message : `Employee with ID ${id} deleted successfully`};
+    }
 }
