@@ -14,4 +14,10 @@ export class EmployeesService {
         const employee = this.employeeRepository.create(employeeData); //.create is the c of crud
         return this.employeeRepository.save(employee);
     }
+
+    async findAll(): Promise<Employee[]> {
+        return this.employeeRepository.find(); //find is the r of crud
+    }
+
+    asy
 }
