@@ -34,7 +34,7 @@ export class EmployeesController {
         @Param('id') id : number
     ) : Promise<{ message : string}> {
 
-        return this.employeesSerivce.delete(id);
+        return this.employeesSerivce.delete(id)
     }
 
 }
