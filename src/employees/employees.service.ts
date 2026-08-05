@@ -52,5 +52,10 @@ export class EmployeesService {
         if(filters.name) {
             query.andWhere('employee.name ILIKE :name' , { name : `%{filters.name}%`})
         }
+
+
+        if (filters.department) {
+            query.andWhere('employee.department = :dept', { dept : `{filters.department}`});
+        }
     }
 }
