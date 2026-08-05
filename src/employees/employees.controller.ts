@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { EmployeesService } from './employees.service';
 import { Employee } from './employees.entity';
-import { Query } from 'nestjs/common';
+import { Query } from '@nestjs/common';
 
 @Controller('employees')
 export class EmployeesController {
