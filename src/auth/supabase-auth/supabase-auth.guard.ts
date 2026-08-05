@@ -22,6 +22,12 @@ export class SupabaseAuthGuard implements CanActivate {
     if(!jwtSecret) {
       throw new UnauthorizedException('JWT secret not found');
     }
-    return true;
+
+
+    try {
+      const decode = jwt.verify(token, jwtSecret);
+      request['user'] = decode;
+      return true;
+    }
   }
 }
