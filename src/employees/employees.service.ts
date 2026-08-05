@@ -50,12 +50,12 @@ export class EmployeesService {
         const query = this.employeeRepository.createQueryBuilder('employee');
 
         if(filters.name) {
-            query.andWhere('employee.name ILIKE :name' , { name : `%{filters.name}%`})
+            query.andWhere('employee.name ILIKE :name' , { name : `%${filters.name}%`})
         }
 
 
         if (filters.department) {
-            query.andWhere('employee.department = :dept', { dept : `{filters.department}`});
+            query.andWhere('employee.department = :dept', { dept : filters.department});
         }
 
         return query.getMany();
