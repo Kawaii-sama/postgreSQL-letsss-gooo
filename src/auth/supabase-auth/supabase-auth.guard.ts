@@ -29,5 +29,9 @@ export class SupabaseAuthGuard implements CanActivate {
       request['user'] = decode;
       return true;
     }
+
+    catch (error) {
+      throw new UnauthorizedException('Invalid Token');
+    }
   }
 }
