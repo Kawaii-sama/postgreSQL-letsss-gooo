@@ -57,5 +57,7 @@ export class EmployeesService {
         if (filters.department) {
             query.andWhere('employee.department = :dept', { dept : `{filters.department}`});
         }
+
+        return query.getMany();
     }
 }
