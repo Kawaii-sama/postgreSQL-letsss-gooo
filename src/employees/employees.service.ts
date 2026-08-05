@@ -45,4 +45,8 @@ export class EmployeesService {
         }
         return { message : `Employee with ID ${id} deleted successfully`};
     }
+
+    async search (filters : { name ?: string, department ?: string}) : Promise<Employee[]> {
+        const query = this.employeeRepository.createQueryBuilder('employee');
+    }
 }
