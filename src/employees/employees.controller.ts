@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { EmployeesService } from './employees.service';
 import { Employee } from './employees.entity';
-import { Query } from 'mongoose';
+import { Query } from 'nestjs/common';
 
 @Controller('employees')
 export class EmployeesController {
@@ -23,6 +23,7 @@ export class EmployeesController {
         @Query('department') department ?: string
     ) : Promise<Employee[]> {
         
+        return this.employeesSerivce.search({ name, department})
     }
 
     @Get(':id')
