@@ -16,6 +16,7 @@ export class SupabaseAuthGuard implements CanActivate {
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       throw new UnauthorizedException('No token provided');
     }
+    const token = authHeader.split(' ')[1];
     return true;
   }
 }
