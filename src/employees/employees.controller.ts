@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { EmployeesService } from './employees.service';
 import { Employee } from './employees.entity';
+import { Query } from 'mongoose';
 
 @Controller('employees')
 export class EmployeesController {
@@ -14,6 +15,14 @@ export class EmployeesController {
     @Get()
     async findAll() : Promise<Employee[]> {
         return this.employeesSerivce.findAll();
+    }
+
+    @Get('search')
+    async searchEmployees( 
+        @Query('name') name ?: string, 
+        @Query('department') department ?: string
+    ) : Promise<Employee[]> {
+        
     }
 
     @Get(':id')
