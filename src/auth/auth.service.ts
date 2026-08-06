@@ -18,4 +18,12 @@ export class AuthService {
         const user = new this.userModel({email, password : hash});
         return user.save();
     }
+
+    async login(email : string, passowrd: string) {
+        const user = await this.userModel.findOne({email});
+        if (!user) return null;
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) return null;
+        const 
+    }
 }
