@@ -11,4 +11,9 @@ export class CreateBookInput {
     @Field({nullable : true})
     @IsString()
     'description' ?: string;
+
+    @Field()
+    @IsString()
+    @IsNotEmpty()
+    'author' : string;
 }
