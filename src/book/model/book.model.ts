@@ -1,2 +1,2 @@
 import {Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
-import { D}
+import { Document } from 'mongoose';
