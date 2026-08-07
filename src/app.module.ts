@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EmployeesModule } from './employees/employees.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { BookModule } from './book/book.module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     UserModule,
     EmployeesModule,
-    AuthModule],
+    AuthModule,
+    BookModule],
   controllers: [AppController],
   providers: [AppService],
 })
