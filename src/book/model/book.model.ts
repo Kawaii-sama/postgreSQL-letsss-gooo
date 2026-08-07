@@ -24,3 +24,5 @@ export class Book extends Document {
     'author' : string;
 
 }
+
+export const BookSchema = SchemaFactory.createForClass(Book);
