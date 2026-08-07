@@ -19,5 +19,8 @@ export class Book extends Document {
     @Field({nullable : true})
     'description' ?: string;
 
+    @Prop({required  : true})
+    @Field()
+    'author' : string;
 
 }
