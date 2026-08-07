@@ -11,5 +11,13 @@ export class Book extends Document {
     //declare readonly _id : Types.ObjectId;
     declare readonly _id : string;
 
+    @Prop({required : true})
+    @Field()
+    title: string;
+
+    @Prop()
+    @Field({nullable : true})
+    description ?: string;
+
 
 }
