@@ -13,11 +13,11 @@ export class Book extends Document {
 
     @Prop({required : true})
     @Field()
-    title: string;
+    'title': string;
 
     @Prop()
     @Field({nullable : true})
-    description ?: string;
+    'description' ?: string;
 
 
 }
