@@ -7,4 +7,8 @@ export class CreateBookInput {
     @IsString()
     @IsNotEmpty()
     'title' : string;
+
+    @Field({nullable : true})
+    @IsString()
+    'description' ?: string;
 }
