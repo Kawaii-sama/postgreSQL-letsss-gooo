@@ -8,11 +8,15 @@ import { EmployeesModule } from './employees/employees.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { BookModule } from './book/book.module';
+import { GraphQLModule } from '@nestjs/graphql';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal : true
+    }),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+
     }),
     MongooseModule.forRoot(process.env.MONGO_URI!),
     TypeOrmModule.forRoot({
