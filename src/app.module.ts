@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { BookModule } from './book/book.module';
 import { GraphQLModule } from '@nestjs/graphql';
+import { join } from 'path/win32';
 
 @Module({
   imports: [
@@ -16,7 +17,9 @@ import { GraphQLModule } from '@nestjs/graphql';
       isGlobal : true
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
-
+      driver : ApolloDriver,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      so
     }),
     MongooseModule.forRoot(process.env.MONGO_URI!),
     TypeOrmModule.forRoot({
