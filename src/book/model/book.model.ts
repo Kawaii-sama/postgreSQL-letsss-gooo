@@ -1,5 +1,5 @@
 import {Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
-import { Document, Schema as MongooseSchema } from 'mongoose';
+import { Document } from 'mongoose';
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { Types } from 'mongoose';
 
@@ -8,8 +8,8 @@ import { Types } from 'mongoose';
 
 export class Book extends Document {
     @Field(() => ID)
-    //declare readonly _id : Types.ObjectId;
-    declare readonly _id : string;
+    declare readonly _id : Types.ObjectId;
+    //declare readonly _id : string;
 
     @Prop({required : true})
     @Field()
