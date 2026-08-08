@@ -19,5 +19,9 @@ export class BookService {
 
     async findOne(id : string) : Promise<Book> {
         const book = await this.bookModel.findById(id).exec();
+        if (!book) {
+            throw new NotFoundException(`Book with ID ${id} not found!`);
+        }
+        return book;
     }
 }
