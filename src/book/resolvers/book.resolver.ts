@@ -2,6 +2,7 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { BookService } from '../book.service';
 import { Book } from '../model/book.model';
 import { UpdateBookInput } from '../dto/update-book.input';
+import { CreateBookInput } from '../dto/create-book.input';
 
 @Resolver(() => Book)
 export class BookResolver {
@@ -18,8 +19,13 @@ export class BookResolver {
     }
 
     @Mutation( () => Book)
-    async createBook(@Args ('input') input : UpdateBookInput) {
+    async createBook(@Args ('input') input : CreateBookInput) {
         return this.bookService.create(input);
+    }
+
+    @Mutation( () => Book)
+    async updateBook(@Args ('input') input : UpdateBookInput) {
+    return this.bookService.update(input);
     }
 
 }
